@@ -16,7 +16,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="sel
 .checkbox{margin-top:10px;}
 .input:hover{border:1px solid #DBDBDB;}
 .textarea{width:400px; height:200px; padding:0; border:1px solid #EBEBEB; outline:none; line-height:32px;}
-#testbox, #testbox1, #testbox2{width:auto; height:34px; margin:10px auto 0; padding:0; background:#FFF; overflow:hidden;}
+#testbox, #testbox1, #testbox2, .other{width:auto; height:34px; margin:10px auto 0; padding:0; background:#FFF; overflow:hidden;}
 #testbox input{width:190px; height:30px; padding:0 5px; line-height:30px; margin-right:10px; border:1px solid #EBEBEB; outline:none; float:left; overflow:hidden;}
 #testbox select{width:auto; min-width:60px; height:32px; padding:4px 2px; line-height:30px; margin-right:10px; border:1px solid #EBEBEB; outline:none; float:left; overflow:hidden;}
 </style>
@@ -26,19 +26,21 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="sel
 	<div id="testbox"><input type="text" name="area" class="input" value="500000,500117,500117005"></div>
 	<div id="testbox1"><input type="text" id="area1" name="area1" class="input" value="340000,341300,341323"></div>
 	<div id="testbox2"></div>
-	<input type="text" id="area2" name="area2" class="input" value="340000,341300,341323,341323400">
-</div>
-<div id="info">
-	<h1>使用说明</h1>
-	<p>1. container 是必须的参数，即外部容器的ID。</p>
-	<p>2. input 是可选的参数，即初始化数据和接收更新数据的容器的ID。a.设置此参数时，“input 容器” 可以不在 “container 容器” 内。b.当input的ID不存在时，按未设置input的方式执行。c.未设置时，会自动搜索 “container 容器” 内第1个 “INPUT” 元素作为 “input 容器”。d.如果input的ID未设置且 “container 容器” 内没有 “INPUT” 元素，将运行出错。</p>
-	<p>3. css 是可选的参数，即为JS生成的 “SELECT” 元素增加 className。</p>
-	<p>4. data 是可选的参数。data.path：数据的路径，默认为“/data/”。data.top：第1个加载数据名，默认为“data”。data.extension：文件扩展名，默认为“.json”。如果需要构造动态网址的，可以这样：“{"path":"/data/?d=", "top":"100000", "extension":""}”</p>
+	<div class="other"><input type="text" id="area2" name="area2" class="input" value="340000,341300,341323,341323400"></div>
+	<div class="other"><input type="text" id="area2text" name="area2text" class="input"></div>
 </div>
 <script>
 var x = new ANDX.cnadSelect({"container":"testbox"});
 var x1 = new ANDX.cnadSelect({"container":"testbox1", "input":"area1", "css":"select", "data":{"path":"/data/", "top":"100000", "extension":".json"}});
-var x2 = new ANDX.cnadSelect({"container":"testbox2", "input":"area2", "css":"select", "data":{"path":"/data/", "top":"100000", "extension":".json"}});
+var x2 = new ANDX.cnadSelect({"container":"testbox2", "input":"area2", "text":"area2text", "css":"select", "data":{"path":"/data/", "top":"100000", "extension":".json"}});
 </script>
+<div id="info">
+	<h1>使用说明</h1>
+	<p>1. container 是必须的参数，即外部容器的ID。</p>
+	<p>2. input 是可选的参数，即初始化数据和接收更新数据的容器的ID。a.设置此参数时，“input 容器” 可以不在 “container 容器” 内。b.当input的ID不存在时，按未设置input的方式执行。c.未设置时，会自动搜索 “container 容器” 内第1个 “INPUT” 元素作为 “input 容器”。d.如果input的ID未设置且 “container 容器” 内没有 “INPUT” 元素，将运行出错。</p>
+	<p>3. text 是可选的参数，即接收中文地址的容器的ID。“text 容器” 可以不在 “container 容器” 内。与 “input 容器” 的ID不能相同。</p>
+	<p>4. css 是可选的参数，即为JS生成的 “SELECT” 元素增加 className。</p>
+	<p>5. data 是可选的参数。data.path：数据的路径，默认为“/data/”。data.top：第1个加载数据名，默认为“data”。data.extension：文件扩展名，默认为“.json”。如果需要构造动态网址的，可以这样：“{"path":"/data/?d=", "top":"100000", "extension":""}”</p>
+</div>
 </body>
 </html>

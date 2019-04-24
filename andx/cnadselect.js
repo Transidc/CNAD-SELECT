@@ -10,6 +10,7 @@ ANDX.cnadSelect = function(conf){
 	var aDefault = get(sInputId).value.split(",");
 	var iLevel = 0;
 	var aData = [];
+	setSelect(0, sDataTop);
 	function setSelect(iLevelThis, sFileName)
 	{
 		var sUrl = sDataPath + sFileName + sDataExtension;
@@ -76,12 +77,16 @@ ANDX.cnadSelect = function(conf){
 	function update()
 	{
 		var newData = "";
+		var newDataStr = "";
 		for (var i=0; i<iLevel; i++)
 		{
-			if(i==0) newData += get(conf.container + sIdNameSelect + i).value;
-			else  newData += "," + get(conf.container + sIdNameSelect + i).value;
+			var oSelected = get(conf.container + sIdNameSelect + i);
+			if(i==0) newData += oSelected.value;
+			else  newData += "," + oSelected.value;
+			newDataStr += aData[i][oSelected.value].name;
 		}
 		get(sInputId).value = newData;
+		if(conf.text && (conf.text!=sInputId) && get(conf.text)) get(conf.text).value = newDataStr;
 	}
 	function getInputId()
 	{
@@ -102,6 +107,5 @@ ANDX.cnadSelect = function(conf){
 		if(iInputNum < 1) console.log("There is no container (such as 'input') for receiving data.");
 		return sInputIdThis;
 	}
-	setSelect(0, sDataTop);
 };
 //	Powered by Transidc.com		Github: https://github.com/Transidc/CNAD-SELECT/
