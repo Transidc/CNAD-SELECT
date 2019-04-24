@@ -1,6 +1,8 @@
 # CNAD-SELECT
 中国省市区联动选择
 
+测试地址：https://github.transidc.com/cnad-select.html
+
 调用方法：
 
 <script src="/andx/cnadselect.js"></script>
