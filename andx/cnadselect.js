@@ -1,4 +1,3 @@
-//var x1 = new ANDX.cnadSelect({"container":"testbox1", "input":"area1", "css":"select", "data":{"path":"/data/", "top":"data", "extension":".json"}});
 function get(a){return arguments[1] ? arguments[1].getElementsByTagName(a) : document.getElementById(a)}
 ANDX = {};
 ANDX.cnadSelect = function(conf){
@@ -105,3 +104,4 @@ ANDX.cnadSelect = function(conf){
 	}
 	setSelect(0, sDataTop);
 };
+//	Powered by Transidc.com		Github: https://github.com/Transidc/CNAD-SELECT/
