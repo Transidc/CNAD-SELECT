@@ -47,4 +47,4 @@ Powered by Transidc.com
    
 Github: https://github.com/Transidc/CNAD-SELECT/
    
-数据包来源：https://github.com/adyliu/china_area/
+数据来源：https://github.com/adyliu/china_area/
