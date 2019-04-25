@@ -43,6 +43,8 @@
    
    如果需要构造动态网址的，可以这样：“{"path":"/data/?d=", "top":"100000", "extension":""}”
    
-   Powered by Transidc.com
+Powered by Transidc.com
    
-   Github: https://github.com/Transidc/CNAD-SELECT/
+Github: https://github.com/Transidc/CNAD-SELECT/
+   
+数据包来源：https://github.com/adyliu/china_area/
